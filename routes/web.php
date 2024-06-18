@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/logout', [AuthController::class, 'login'])->name('logout');
+
+Route::resource('products', ProductController::class)->only(['index']);
