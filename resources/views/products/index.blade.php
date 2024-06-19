@@ -24,14 +24,16 @@
             <h1>Products</h1>
             <div class="cards">
                 @foreach ($products as $product)
-                    {{ print_r($product['images'][0]) }} 
-                    <div class="card">
-                        <img src="{{ $product['images'][0] }}" alt="{{ $product['title'] }}">
-                        <div class="card-body">
-                            <h2 class="card-title">{{ $product['title'] }}</h2>
-                            <p class="card-price">${{ $product['price'] }}</p>
+                    {{-- print_r($product['images'][0]) --}} 
+                    <a href="{{ route('products.show', ['id' => $product['id']]) }}">
+                        <div class="card">
+                            <img src="{{ $product['images'][0] }}" alt="{{ $product['title'] }}">
+                            <div class="card-body">
+                                <h2 class="card-title">{{ $product['title'] }}</h2>
+                                <p class="card-price">${{ $product['price'] }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>

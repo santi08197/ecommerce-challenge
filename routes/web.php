@@ -32,4 +32,5 @@ Route::get('/dashboard', function () {
 
 Route::get('/logout', [AuthController::class, 'login'])->name('logout');
 
-Route::resource('products', ProductController::class)->only(['index']);
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');

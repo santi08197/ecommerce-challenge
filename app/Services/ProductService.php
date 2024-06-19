@@ -23,4 +23,14 @@ class ProductService
         return [];
     }
 
+    public function getProductById($id)
+    {
+        $response = Http::get($this->apiUrl . '/products/' . $id);
+
+        if ($response->successful()) {
+            return $response->json();
+        }
+
+        return null;
+    }
 }
