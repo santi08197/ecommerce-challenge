@@ -31,7 +31,7 @@
                 @csrf
                 <button type="submit" class="btn btn-buy">Comprar</button>
             </form>
-            <form action="{{-- route('cart.add', ['id' => $product['id']]) --}}" method="POST" style="display: inline;">
+            <form action="{{ route('cart.add', ['id' => $product['id']]) }}" method="POST" style="display: inline;">
                 @csrf
                 <button type="submit" class="btn btn-add-cart">Agregar al Carrito</button>
             </form>
