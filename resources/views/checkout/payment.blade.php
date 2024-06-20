@@ -24,11 +24,10 @@
         <form action="{{ route('checkout.process') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label>Select Payment Method:</label><br>
                 <label for="bank_transfer">Bank Transfer</label>
                 <input type="checkbox" name="payment_method" value="Bank Transfer" id="bank_transfer">
             </div>
-            <button type="submit" class="btn" disabled id="continueBtn">Continue to Review</button>
+            <button type="submit" class="btn btn-buy" disabled id="continueBtn">Continue to Review</button>
         </form>
     </div>
     

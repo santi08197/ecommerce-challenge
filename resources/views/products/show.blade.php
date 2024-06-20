@@ -27,7 +27,7 @@
             
 
         <div class="buttons mt-3">
-            <form action="{{-- route('products.buy', ['id' => $product['id']]) --}}" method="POST" style="display: inline;">
+            <form action="{{ route('checkout.payment') }}" method="GET" style="display: inline;">
                 @csrf
                 <button type="submit" class="btn btn-buy">Comprar</button>
             </form>
