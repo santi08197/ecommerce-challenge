@@ -50,12 +50,12 @@
                 <div class="total-label">Total:</div>
                 <div class="total-amount">${{ $total }}</div>
             </div>
-            {{-- <div class="cart-actions">
-                <form action="{{ route('checkout.process') }}" method="GET">
+            <div class="cart-actions">
+                <form action="{{ route('checkout.purchase') }}" method="POST">
                     @csrf
                     <button type="submit">Confirm Purchase</button>
                 </form>
-            </div> --}}
+            </div>
         @endif
     </div>
     

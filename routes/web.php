@@ -44,3 +44,6 @@ Route::post('/cart/remove/{productId}', [CartController::class, 'remove'])->name
 Route::get('/checkout', [CheckoutController::class, 'payment'])->name('checkout.payment');
 Route::post('/checkout/process', [CheckoutController::class, 'processPayment'])->name('checkout.process');
 Route::get('/checkout/review', [CheckoutController::class, 'review'])->name('checkout.review');
+
+Route::post('/checkout/purchase', [CheckoutController::class, 'purchase'])->name('checkout.purchase');
+Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
