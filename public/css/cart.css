@@ -52,3 +52,17 @@ form button {
 form button:hover {
     background-color: #da190b;
 }
+
+.cart-total {
+    display: flex;
+    align-items: center; 
+}
+
+.total-label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.total-amount {
+    font-size: 18px;
+}
