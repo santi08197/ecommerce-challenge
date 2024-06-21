@@ -21,13 +21,29 @@
 
     <div class="container">
         <h1>Step 1: Select Payment Method</h1>
+        
         <form action="{{ route('checkout.process') }}" method="POST">
             @csrf
-            <div class="form-group">
-                <label for="bank_transfer">Bank Transfer</label>
-                <input type="checkbox" name="payment_method" value="Bank Transfer" id="bank_transfer">
+            <div class="payment-options">
+                <div class="payment-option">
+                    <input type="radio" id="payment_method_transfer" name="payment_method" value="transfer">
+                    <label for="payment_method_transfer">Bank Transfer</label>
+                    <p>Pay via bank transfer. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="payment_method_paypal" name="payment_method" value="paypal">
+                    <label for="payment_method_paypal">PayPal</label>
+                    <p>Pay via PayPal. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="payment_method_credit_card" name="payment_method" value="credit_card">
+                    <label for="payment_method_credit_card">Credit Card</label>
+                    <p>Pay with your credit card. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
             </div>
-            <button type="submit" class="btn btn-buy" disabled id="continueBtn">Continue to Review</button>
+            <div class="checkout-button">
+                <button type="submit">Continue to Checkout</button>
+            </div>
         </form>
     </div>
     
