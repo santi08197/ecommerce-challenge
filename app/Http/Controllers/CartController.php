@@ -50,6 +50,26 @@ class CartController extends Controller
         return $response;
     }
 
+    public function update(Request $request)
+    {
+        $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
+
+        $validated = $request->validate([
+            'productId' => 'required|integer',
+            'quantity' => 'required|integer|min:1'
+        ]);
+
+        $productId = $validated['productId'];
+        $quantity = $validated['quantity'];
+
+        if (isset($cartItems[$productId])) {
+            $cartItems[$productId]['quantity'] = $quantity;
+        }
+     
+        $response = new Response(view('cart.index', compact('cartItems')));
+        $response->cookie('cart_items', json_encode($cartItems), 60); 
+        return $response;
+    }
     public function remove(Request $request, $productId)
     {
         $cartItems = $request->cookie('cart_items') ? json_decode($request->cookie('cart_items'), true) : [];

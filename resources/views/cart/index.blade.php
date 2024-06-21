@@ -32,6 +32,12 @@
                             <h3>{{ $item['title'] }}</h3>
                             <p>Price: ${{ $item['price'] }}</p>
                             <p>Quantity: {{ $item['quantity'] }}</p>
+                            <form action="{{ route('cart.update', ['productId' => $productId]) }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="productId" value="{{ $productId }}">
+                                <input type="number" name="quantity" value="{{ $item['quantity'] }}" min="1">
+                                <button type="submit">Update</button>
+                            </form>
                             <form action="{{ route('cart.remove', ['productId' => $productId]) }}" method="POST">
                                 @csrf
                                 <button type="submit">Remove</button>
