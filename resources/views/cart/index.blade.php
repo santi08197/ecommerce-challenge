@@ -15,6 +15,15 @@
             <a class="nav-link" href="/sales-report">Sales Report</a>
         </div>
         <div class="navbar-right">
+            <a href="/cart">Cart
+                @php
+                    $cartItems = json_decode(Cookie::get('cart_items', '[]'), true);
+                    $cartCount = count($cartItems);
+                @endphp
+                @if ($cartCount > 0)
+                    ({{ $cartCount }})
+                @endif
+            </a>
             <a href="/logout">Logout</a>
         </div>
     </nav>
