@@ -12,7 +12,7 @@
             <a class="navbar-brand" href="/">MyApp</a>
             <a class="nav-link" href="/">Home</a>
             <a class="nav-link" href="/products">Productos</a>
-            <a class="nav-link" href="/about">Información</a>
+            <a class="nav-link" href="/sales-report">Sales Report</a>
         </div>
         <div class="navbar-right">
             <a class="nav-link" href="/logout">Logout</a>

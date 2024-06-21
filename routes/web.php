@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SalesReport;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,5 @@ Route::get('/checkout/review', [CheckoutController::class, 'review'])->name('che
 
 Route::post('/checkout/purchase', [CheckoutController::class, 'purchase'])->name('checkout.purchase');
 Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
+
+Route::get('/sales-report', [SalesReport::class, 'index'])->name('sales.report');
