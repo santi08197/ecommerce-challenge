@@ -1,13 +1,14 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Ventas</title>
+@extends('layouts.navbar')
+
+@section('title', 'Sales Report')
+
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/sales.css') }}">
-</head>
-<body>
+@endpush
+
+@section('content')
     <div class="container">
-        <h1>Listado de Ventas</h1>
+        <h1>Sales Reports</h1>
         <div class="form-group">
             <label for="orderSelect">Ordenar por:</label>
             <select class="form-control" id="orderSelect">
@@ -37,8 +38,9 @@
             </tbody>
         </table>
     </div>
+@endsection
 
+@section('scripts')
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('js/sales.js') }}"></script>
-</body>
-</html>
+@endsection
