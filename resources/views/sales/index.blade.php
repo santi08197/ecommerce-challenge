@@ -10,12 +10,23 @@
     <div class="container">
         <h1>Sales Reports</h1>
         <div class="form-group">
-            <label for="orderSelect">Ordenar por:</label>
-            <select class="form-control" id="orderSelect">
-                <option value="created_at">Fecha</option>
-                <option value="total">Precio</option>
-                <option value="quantity">Cantidad</option>
-            </select>
+            <div>
+                <label for="orderSelect">Ordenar por:</label>
+                <select class="form-control" id="orderSelect">
+                    <option value="created_at">Fecha</option>
+                    <option value="total">Precio</option>
+                    <option value="quantity">Cantidad</option>
+                </select>
+            </div>
+            <div>
+                <label for="timeFilterSelect">Filtrar por tiempo:</label>
+                <select class="form-control" id="timeFilterSelect">
+                    <option value="all_time">Todo el tiempo</option>
+                    <option value="this_week">Esta semana</option>
+                    <option value="this_month">Este mes</option>
+                    <option value="this_year">Este año</option>
+                </select>
+            </div>
         </div>
         <table class="sales-table">
             <thead>

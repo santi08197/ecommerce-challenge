@@ -16,4 +16,9 @@ class SaleProduct extends Model
         'quantity',
         'unit_price'
     ];
+
+    public function sale()
+    {
+        return $this->belongsTo(Sale::class);
+    }
 }

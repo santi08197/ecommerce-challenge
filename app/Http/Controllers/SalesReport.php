@@ -10,9 +10,11 @@ class SalesReport extends Controller
 {
     public function index(Request $request)
     {
-        $orderBy = $request->get('orderBy', 'created_at');
-        $sales = Sale::orderBy($orderBy, 'asc')->get();
-        //dd($sales);
+        $order = $request->get('order', 'created_at');
+        $timeFilter = $request->get('time_filter', 'all_time');
+
+        $sales = Sale::getSales($order, $timeFilter);
+
         if ($request->ajax()) {
             return response()->json(['sales' => $sales]);
         }
