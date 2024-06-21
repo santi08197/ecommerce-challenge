@@ -44,8 +44,8 @@ class CartController extends Controller
             ];
         }
 
-        $response = new Response(view('cart.index', compact('cartItems')));
-        $response->cookie('cart_items', json_encode($cartItems), 60); 
+        $response = redirect()->route('cart.index');
+        $response->cookie('cart_items', json_encode($cartItems), 60);
 
         return $response;
     }
@@ -66,8 +66,8 @@ class CartController extends Controller
             $cartItems[$productId]['quantity'] = $quantity;
         }
      
-        $response = new Response(view('cart.index', compact('cartItems')));
-        $response->cookie('cart_items', json_encode($cartItems), 60); 
+        $response = redirect()->route('cart.index');
+        $response->cookie('cart_items', json_encode($cartItems), 60);
         return $response;
     }
     public function remove(Request $request, $productId)
@@ -79,8 +79,8 @@ class CartController extends Controller
             unset($cartItems[$productId]);
         }
         
-        $response = new Response(view('cart.index', compact('cartItems')));
-        $response->cookie('cart_items', json_encode($cartItems), 60); 
+        $response = redirect()->route('cart.index');
+        $response->cookie('cart_items', json_encode($cartItems), 60);
         return $response;
     }
 }
