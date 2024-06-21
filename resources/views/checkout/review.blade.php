@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar-left">
-            <a href="/">Home</a>
+            <a href="/dashboard">Home</a>
             <a href="/products">Products</a>
             <a class="nav-link" href="/sales-report">Sales Report</a>
         </div>
