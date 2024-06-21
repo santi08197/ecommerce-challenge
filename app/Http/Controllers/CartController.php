@@ -43,8 +43,13 @@ class CartController extends Controller
                 'category_id' => $product['category']['id'],
             ];
         }
-
-        $response = redirect()->route('cart.index');
+        $action = $request->input('action', 'cart');
+        
+        if ($action === 'cart') {
+            $response = redirect()->route('cart.index');
+        } elseif ($action === 'checkout') {
+            $response = redirect()->route('checkout.payment');
+        }
         $response->cookie('cart_items', json_encode($cartItems), 60);
 
         return $response;
