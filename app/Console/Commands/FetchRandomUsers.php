@@ -52,8 +52,8 @@ class FetchRandomUsers extends Command
                     $this->info('User created. Email:'.$user->email.' Password:'.$userData['login']['password']);
                 }
                 
-                $this->info('Successfully fetched and stored random users');
             }
+            $this->info('Successfully fetched and stored random users');
 
         }catch(Exception $e){
             $response = response()->json([
