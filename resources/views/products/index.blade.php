@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/products.css') }}">
 </head>
 <body>
     <nav class="navbar">
@@ -20,22 +21,17 @@
     </nav>
 
     <div class="container">
-        <div class="content">
-            <h1>Products</h1>
-            <div class="cards">
-                @foreach ($products as $product)
-                    {{-- print_r($product['images'][0]) --}} 
+        <h1>Products</h1>
+        <div class="product-grid">
+            @foreach ($products as $product)
+                <div class="product-card">
                     <a href="{{ route('products.show', ['id' => $product['id']]) }}">
-                        <div class="card">
-                            <img src="{{ $product['images'][0] }}" alt="{{ $product['title'] }}">
-                            <div class="card-body">
-                                <h2 class="card-title">{{ $product['title'] }}</h2>
-                                <p class="card-price">${{ $product['price'] }}</p>
-                            </div>
-                        </div>
+                        <img src="{{ $product['images'][0] }}" alt="{{ $product['title'] }}">
+                        <h2>{{ $product['title'] }}</h2>
+                        <p>${{ $product['price'] }}</p>
                     </a>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </body>
